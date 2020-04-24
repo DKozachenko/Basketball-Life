@@ -1,0 +1,191 @@
+@import "_vars"
+
+html 
+  font-size: 10px
+
+body 
+  font-family: 'Roboto', sans-serif
+  margin: 0
+
+*,
+*::after,
+*::before 
+  outline: none
+
+.header
+  background: url(../css/images/header/bg.jpg) center no-repeat
+  background-size: cover
+
+  height: 6.5rem
+  
+  color: white
+
+  &__logo
+    font-size: 1.8rem
+    font-weight: 700
+    line-height: 2.4rem
+
+    span
+      font-size: 2.4rem
+      color: $pink
+
+  &__nav
+    &-link
+      font-size: 1.4rem
+      font-weight: 400
+      color: white
+      line-height: 2rem
+      text-decoration: none
+
+      transition: color .2s linear
+
+      &:hover 
+        cursor: pointer
+        color: $pink
+        text-decoration: none
+
+@media (max-width: 992px)
+  .header
+    height: 8.5rem 
+
+@media (max-width: 768px)
+  .header
+    height: 10.5rem 
+
+    &__nav
+      &-link 
+        font-size: 1.2rem   
+
+@media (max-width: 576px)
+  .header
+    height: 11.5rem           
+
+.burger  
+  &:hover 
+    cursor: pointer
+
+    .burger__line-item
+      background: $pink
+
+      &::after,
+      &::before 
+        background: $pink
+
+    .burger__text
+      color: $pink      
+
+  &__line
+    padding: .7rem 0
+
+    &-item
+      width: 2.5rem
+      height: 0.2rem
+      background: white 
+
+      position: relative
+
+      transition: background-color .2s linear       
+
+      &::after
+        content: '' 
+        position: absolute
+        bottom: -.5rem
+        left: 0
+        z-index: 1
+
+        width: 2.5rem
+        height: 0.2rem
+        background: white
+
+        transition: background-color .2s linear
+
+      &::before
+        content: '' 
+        position: absolute
+        top: -.5rem
+        left: 0
+        z-index: 1
+
+        width: 2.5rem
+        height: 0.2rem
+        background: white  
+
+        transition: background-color .2s linear
+
+  &__text 
+    font-size: 1.2rem
+    font-weight: 400
+    line-height: 2rem
+    text-transform: uppercase
+
+    transition: color .2s linear
+
+  &__nav 
+    display: none
+  
+    position: absolute
+    top: 5rem
+    right: 0
+    z-index: 1
+
+    width: 32.5rem
+
+    background: $blue
+
+    &.burger__nav_show
+      display: flex
+
+    &-link
+      width: 100%  
+
+      padding: 2rem 2rem 1.5rem 2rem
+
+      position: relative
+
+      font-size: 1.4rem
+      color: white
+      font-weight: 400
+      line-height: 2.4rem
+
+      &:hover 
+        color: white
+        text-decoration: underline
+
+      &::after 
+        content: ''
+        position: absolute
+        bottom: 0
+        left: 1.5rem
+        z-index: 1
+        background: #487389
+
+        width: 90%
+        height: 0.1rem
+
+@media (max-width: 992px)
+  .burger__nav
+    top: 4rem  
+    width: 28.5rem  
+
+@media (max-width: 768px)
+  .burger__nav
+    width: 22.5rem
+
+    &-link
+      font-size: 1.2rem
+      line-height: 2rem
+
+      padding: 1.2rem   
+
+@media (max-width: 576px)
+  .burger__nav
+    width: 100%  
+
+@media (max-width: 485px)
+  .burger__nav
+    top: 3.8rem         
+
+        
+
+
+
