@@ -1,4 +1,5 @@
 @import "_vars"
+@import "_global"
 
 html 
   font-size: 10px
@@ -7,10 +8,16 @@ body
   font-family: 'Roboto', sans-serif
   margin: 0
 
+  background: url(../css/images/bg.jpg) top no-repeat, #0d0d0d
+  background-size: contain
+
 *,
 *::after,
 *::before 
   outline: none
+
+*:focus
+  outline: none  
 
 .header
   background: url(../css/images/header/bg.jpg) center no-repeat
@@ -24,6 +31,11 @@ body
     font-size: 1.8rem
     font-weight: 700
     line-height: 2.4rem
+    color: white
+
+    &:hover 
+      color: white
+      text-decoration: none
 
     span
       font-size: 2.4rem
@@ -126,7 +138,7 @@ body
     position: absolute
     top: 5rem
     right: 0
-    z-index: 1
+    z-index: 2
 
     width: 32.5rem
 
@@ -183,7 +195,532 @@ body
 
 @media (max-width: 485px)
   .burger__nav
-    top: 3.8rem         
+    top: 3.8rem      
+
+.filter
+  background: url(../css/images/filter/bg.png) center no-repeat 
+  background-size: cover
+
+  padding: 1.5rem 0
+
+  margin-bottom: 1.5rem
+
+  &__buttons
+    position: relative
+    width: 100%
+
+  &__slider
+    &-item
+      padding: 1rem
+      border: 1px solid white 
+      border-radius: 50%  
+
+      width: 6rem 
+
+      margin-right: 1rem
+
+
+.betting
+  &.express
+    .row
+      &:nth-child(3)
+        .col-lg-8 
+          .betting__item
+            &:nth-child(8)
+              display: block !important   
+
+    .betting__item
+      margin-bottom: 0
+
+      &:hover 
+        .betting__item-choose 
+          display: flex !important
+
+      &:nth-child(3n - 1)
+        margin-bottom: 1rem 
+
+      &-choose 
+        display: none !important 
+
+    .button_bets
+      margin-top: 1rem     
+
+  .row.bg-white
+    padding: 2rem 0
+
+    border-bottom: 1px solid #e6e6e6 
+
+    .button 
+      width: 100%
+      max-width: 22.5rem
+
+      margin-right: 0  
+
+  .row
+    &:nth-child(3)
+      .col-lg-8 
+        .betting__item
+          &:nth-child(n+8):nth-child(-n+23)
+            display: none
+          
+
+  &__item
+    color: black
+    background: white 
+    padding: 3rem 2.5rem 3.5rem 0
+    border-radius: .5rem   
+
+    display: block
+
+    margin-bottom: 1rem
+
+    &-content
+      &__title
+        font-size: 1.8rem
+        font-weight: 700
+        line-height: 2.4rem
+
+        margin-bottom: 1.5rem
+
+      &__subtitle
+        font-size: 1.3rem
+        font-weight: 300
+        line-height: 2.4rem
+
+        margin-bottom: 1.5rem    
+
+      &__bet 
+        font-size: 1.4rem
+        font-weight: 400
+        line-height: 2.4rem
+
+        button
+          margin-left: 6rem 
+
+    &-choose
+      height: 100%
+
+      &__title
+        font-size: 1.4rem
+        font-weight: 400
+        line-height: 2.4rem
+
+        margin-bottom: 1.5rem 
+
+  &__subscribe
+    background: $blue 
+    width: 100%
+    height: 95% 
+    color: white
+
+    &-title
+      font-size: 1.8rem
+      font-weight: 900
+      line-height: 1.6rem
+      text-transform: uppercase
+
+      span  
+        font-size: 1.4rem
+        font-weight: 400
+        line-height: 1.6rem  
+        text-transform: lowercase
+
+        display: block
+
+      margin-bottom: 2rem  
+
+    .input-group
+      width: 100%
+      max-width: 31.5rem
+
+      input
+        height: auto
+        padding: 1rem 1.5rem  
+
+        font-size: 1.3rem
+        font-weight: 300
+        line-height: 2.3rem 
+
+        border: none
+
+        &:focus 
+          border: none
+
+      &-append 
+        button
+          width: 5rem  
+
+          font-size: 1.4rem
+          font-weight: 700
+          line-height: 2.3rem 
+          color: white 
+          text-transform: uppercase
+          z-index: 1
+
+          border: none
+
+          background: $pink
+
+          &:hover 
+            background: $pink-dark
+
+          &:focus 
+            border: none
+
+  &__news
+    &.betting__news_top 
+      margin-top: -5rem
+
+    &-item
+      margin-bottom: 0.4rem
+
+      &__content
+        background: #f3f5f8  
+
+        padding: 2rem 1.5rem 2.5rem 2rem    
+
+        p
+          &:first-child
+            font-size: 1.5rem
+            font-weight: 900
+            line-height: 1.9rem
+
+            margin-bottom: 1rem
+
+          &:last-child
+            font-size: 1.3rem
+            font-weight: 300
+            line-height: 2.4rem  
+
+            margin-bottom: 0    
+        
+      &__img
+        width: 100%
+        max-width: 13rem
+
+        position: relative
+
+        overflow: hidden
+
+        div
+          position: absolute
+          top: 1rem
+          right: 0.6rem
+
+          width: 3.7rem
+          height: 3.7rem
+
+          background: $pink
+          border-radius: 50%
+
+          transition: background-color 2s linear
+
+          &:hover 
+            cursor: pointer
+            background: $pink-dark
+
+  &__team
+    &-title 
+      font-size: 1.8rem
+      font-weight: 700
+      line-height: 2.4rem
+
+      margin-top: 1.5rem
+
+  &__date 
+    &-time 
+      font-size: 1.6rem
+      font-weight: 700
+      line-height: 2.4rem 
+
+      span 
+        font-size: 1.4rem
+        font-weight: 400
+        color: #939393  
+
+  &__block 
+    background: white
+
+    padding: 2rem 1.5rem
+
+    margin-bottom: 1rem
+
+    &-title 
+      font-size: 1.6rem
+      font-weight: 700
+      line-height: 1.9rem
+
+      margin-bottom: .7rem
+
+    &-text 
+      font-size: 1.4rem
+      font-weight: 300
+      line-height: 1.9rem
+
+      margin-bottom: 1.5rem  
+
+    button.button 
+      max-width: 26.5rem  
+
+  &__koef 
+    padding: 3rem 1.5rem
+
+    margin-bottom: 1rem
+
+    &-title
+      font-size: 2.1rem
+      font-weight: 700
+      line-height: 2.4rem
+
+      margin-bottom: 2rem 
+
+  &__graph 
+    padding: 3rem 1.5rem
+
+    margin-bottom: 1rem
+
+    .table__row
+      border: none !important 
+
+      &-bets 
+        span
+          &:not(:first-child)
+            border: none !important
+
+    &-img 
+      height: 16.5rem   
+
+      margin-bottom: 6rem 
+
+  &__other 
+    padding: 3rem 1.5rem
+
+    margin-bottom: 1rem   
+
+    .table__row
+      &-content 
+        &__img 
+          margin-right: 2rem
+
+        &__title 
+          font-size: 1.8rem
+          font-weight: 700
+          line-height: 2.4rem
+
+
+  .table 
+    margin-bottom: 0
+
+    &__row 
+      padding: 1rem 0
+
+      &:not(:first-child)
+        border-top: 1px solid #e6e6e6   
+
+      &-bets 
+        span 
+          font-size: 1.6rem
+          font-weight: 400
+          line-height: 2.4rem
+
+          padding: 0 2rem  
+
+          &:not(:first-child)
+            border-left: 1px solid #e6e6e6 
+
+        &__button 
+          padding: 0 1rem 
+
+          &:not(:first-child)
+            border-left: 1px solid #e6e6e6   
+
+          button.button 
+            max-width: 6rem    
+
+            padding: 1rem 1.5rem
+
+            margin-right: 0    
+
+      &-name 
+        font-size: 1.6rem
+        font-weight: 400
+        line-height: 1.9rem
+
+      &-content
+
+.description
+    padding: 5rem 0
+
+    color: white  
+
+    &__text 
+      p
+        font-size: 1.4rem
+          font-weight: 300
+          line-height: 2.6rem
+
+        &:first-child
+          font-size: 1.8rem
+          font-weight: 700
+
+.footer 
+    background: $dark-blue 
+
+    padding: 3.5rem 0    
+
+    &__text 
+      font-size: 1.3rem
+      font-weight: 300
+      line-height: 2.2rem  
+      color: #b7c0c5 
+
+@media (max-width: 1200px)
+  .betting__item
+    .row
+      &:first-child
+        .col-3
+          &:first-child
+            display: flex
+            justify-content: center
+            align-items: center
+        
+  .betting__item-content__bet 
+    button
+      margin-left: 5rem 
+
+  .betting__subscribe 
+    .input-group
+      max-width: 25.5rem  
+
+  .betting 
+    .row.bg-white 
+      .button
+        max-width: 16.5rem
+        padding: .5rem 1rem 
+
+    &__graph-img
+      img 
+        width: 100%            
+
+@media (max-width: 992px)
+  .h-fit
+    height: fit-content
+
+  .betting__subscribe 
+    padding: 4rem
+
+    margin-bottom: 1rem   
+
+    .input-group
+      max-width: 32.5rem   
+
+  .betting__block 
+    button.button 
+      max-width: 25.5rem
+      margin-left: 0
+
+  .betting 
+    .table__row-bets__button  
+      button.button
+        margin-left: 0  
+
+  .footer__text 
+    margin-bottom: 2rem 
+               
+@media (max-width: 768px)
+  .betting__item-content__title
+    font-size: 1.6rem
+    
+  .betting__item-content__subtitle
+    font-size: 1.2rem 
+
+  .betting__item-content__bet
+    font-size: 1.3rem    
+
+  .betting__item-choose__title
+    font-size: 1.3rem       
+
+@media (max-width: 768px)
+   
+
+  .betting 
+    .row.bg-white 
+      .button
+        max-width: 14.5rem
+
+  .betting 
+    .table__row-bets__button
+      padding: .5rem
+
+      button.button
+        padding: 1rem 1.5rem
+
+@media (max-width: 576px)
+  .betting__item-content
+    padding-left: 2rem          
+
+@media (max-width: 470px)
+  .betting 
+    .row.bg-white 
+      .button
+        max-width: 10.5rem
+
+  .betting 
+    .table__row-bets__button 
+      button.button
+        padding: 1rem   
+
+@media (max-width: 410px)
+  .betting__item-content__title
+    font-size: 1.4rem
+
+  .betting__item-content__subtitle
+    font-size: 1.1rem
+
+  .betting__item-content__bet
+    font-size: 1.2rem
+
+  .betting__item-choose__title
+    font-size: 1.2rem      
+      
+  
+
+  .betting 
+    .table__row-bets__button 
+      button.button
+        padding: .5rem    
+
+  .betting 
+    .table__row-name
+      font-size: 1.3rem
+
+  .betting__other 
+    .table__row-content__title 
+      font-size: 1.4rem   
+
+@media (max-width: 380px)
+  .betting 
+    .table__row-bets 
+      span     
+        padding: 0 1rem
+          
+@media (max-width: 360px)
+  .betting 
+    .row.bg-white 
+      .button 
+        max-width: 7.5rem
+
+  .betting 
+    .table__row-name
+      font-size: 1.1rem
+
+  .betting__other 
+    .table__row-content__title 
+      font-size: 1.2rem
+    
+
+
+      
 
         
 

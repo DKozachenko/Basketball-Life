@@ -1,0 +1,227 @@
+.button
+  padding: 1rem 3.5rem
+  background: $pink
+
+  font-size: 1.4rem
+  font-weight: 400
+  line-height: 2rem
+  color: white
+
+  border: none
+  border-radius: .5rem
+
+  transition: background-color .2s linear
+
+  &:hover 
+    cursor: pointer
+    background: $pink-dark
+
+  &:focus
+    outline: none  
+
+  &:not(:nth-child(3))
+    margin-right: 0.5rem  
+
+  &:nth-child(3)
+    background: url(../css/images/filter/calendar-button.png) 1rem 1rem no-repeat, $pink   
+
+    width: 100%
+    max-width: 13.2rem
+
+    &:hover 
+      background-color: $pink-dark
+
+  &.button_bet
+    background: $blue 
+
+    &:hover 
+      background: $dark-blue  
+
+  &.button_bets 
+    width: 100%
+    border-radius: .2rem
+    padding-top: 2rem
+    padding-bottom: 2rem     
+
+.prev
+  display: block
+  width: 2.3rem
+  height: 2.3rem
+  border-radius: 50%
+
+  background: url(../css/images/filter/prev.png) center no-repeat, $pink
+
+  border: none
+
+  margin-right: 1rem
+
+  outline: none
+
+.next
+  display: block
+  width: 2.3rem
+  height: 2.3rem
+  border-radius: 50%
+
+  background: url(../css/images/filter/next.png) center no-repeat, $pink
+
+  border: none  
+
+  margin-left: 1rem
+
+  outline: none
+
+.slick-list 
+  width: 88%  
+
+//Styles for calendar
+#calendar2 
+  display: none
+  width: 24rem
+  line-height: 1.2em
+  font-size: 15px
+  text-align: center
+
+  position: absolute
+  right: -5rem
+  top: 5rem
+  z-index: 1
+
+  &.calendar_show
+    display: table
+
+#calendar2 thead tr:last-child 
+  color: $pink
+  background: url(../css/images/filter/calendar-header.png) top no-repeat
+  background-size: cover
+  height: 4.5rem
+
+#calendar2 thead tr:first-child 
+  color: white
+  background: $pink
+
+  height: 5rem
+
+#calendar2 thead tr:nth-child(1) td:nth-child(2) 
+  font-size: 1.4rem
+  font-weight: 700
+  line-height: 1.7rem
+  color: white
+
+#calendar2 thead tr:nth-child(1) td:nth-child(1), #calendar2 thead tr:nth-child(1) td:nth-child(3)
+  font-size: 3rem
+
+  &:hover 
+    cursor: pointer
+
+#calendar2 tbody 
+  background: white
+
+#calendar2 tbody tr td 
+  border: 1px solid #f0f9f0
+  color: #6c7174
+
+  position: relative
+  height: 3.2rem
+
+  &:hover 
+    cursor: pointer
+    color: black
+
+    &::after 
+      display: block
+
+  &::after 
+    content: ''
+    position: absolute
+    left: 50%
+    bottom: 0
+
+    display: none
+    width: 3rem
+    height: 0.4rem
+    background: $pink
+
+    transform: translateX(-50%)
+
+
+#calendar2 tbody td:nth-child(7)
+  color: $pink
+
+#calendar2 tbody td.today 
+  background: rgb(220, 0, 0)
+  color: #fff
+
+.pointer 
+  font-size: 1.3rem
+  font-weight: 300
+  line-height: 2rem
+  color: white  
+  margin-bottom: 1.5rem
+
+@media (max-width: 1200px) 
+  .button 
+    padding: 1rem 2.9rem
+
+  .slick-list 
+    width: 78% 
+
+  #calendar2
+    right: -10.3rem
+
+@media (max-width: 992px) 
+  .button 
+    &:not(:nth-child(3))
+      margin-bottom: 1rem
+
+    &.button_bet
+      margin-bottom: 0  
+      margin-left: 9rem
+
+  .slick-list 
+    width: 70% 
+
+  #calendar2
+    right: -11.3rem
+    top: 5.1rem  
+
+@media (max-width: 768px) 
+  .slick-list 
+    width: 82% 
+
+  #calendar2
+    right: -3.3rem
+    width: 22rem  
+
+  .button 
+    &.button_bet
+      margin-left: 1rem    
+
+@media (max-width: 576px) 
+  .slick-list 
+    width: 27rem 
+
+  #calendar2
+    right: -.7rem   
+
+@media (max-width: 410px) 
+  .slick-list 
+    width: 21rem 
+
+  #calendar2
+    top: 5rem
+    right: 1rem
+
+@media (max-width: 395px) 
+  .button
+    &:nth-child(3)
+      margin-bottom: 1rem
+
+    &.button_bet 
+      margin-bottom: 0  
+
+  #calendar2
+    right: 0      
+
+
+
